@@ -37,8 +37,8 @@ if(counter == 0) {
 
 function openMenuPrincipal() {
     
-    opcionPrincipal = prompt("Ingrese la opción que desea realizar: \n 1. Consulta Saldo \n 2. Operaciones \n 3. Prestamos \n 4. Salir");
 
+    do  { opcionPrincipal = prompt("Ingrese la opción que desea realizar: \n 1. Consulta Saldo \n 2. Operaciones \n 3. Prestamos \n 4. Salir")
     switch (opcionPrincipal) {
 
         case '1':
@@ -54,15 +54,15 @@ function openMenuPrincipal() {
             salir();
             break;
         default:
-            alert("Ha ingresado una opción inválida");            
+            alert("Ha ingresado una opción inválida");             
             break;
-    }    
+    }
+    } while (opcionPrincipal != 4);    
 }
 
 function openMenuOperaciones() {
     
-    opcionSeleccion = prompt("Ingrese la opción que desea realizar: \n 1. Invertir en FCI \n 2. Comprar de Cripto \n 3. Salir");
-
+    do  {  opcionSeleccion = prompt("Ingrese la opción que desea realizar: \n 1. Invertir en FCI \n 2. Comprar de Cripto \n 3. Salir");
     switch (opcionSeleccion) {
 
         case '1':
@@ -80,10 +80,17 @@ function openMenuOperaciones() {
             openMenuPrincipal();           
             break;
     }    
+    } while (opcionSeleccion != 3);
 }
 
 function invertirFCI(saldoDisponible) {
-    let seleccionarFondo = +prompt("Seleccione el fondo en el cual va a invertir: \n 1. UALA (38.25 %) \n 2. MELI (39.45 %) \n 3. BALANZ (44 %) \n 4. VER TODOS LOS RENDIMIENTOS \n 5. Volver atras");
+   
+    let seleccionarFondo = 0;
+    
+    do  {
+    seleccionarFondo = +prompt("Seleccione el fondo en el cual va a invertir: \n 1. UALA (38.25 %) \n 2. MELI (39.45 %) \n 3. BALANZ (44 %) \n 4. VER TODOS LOS RENDIMIENTOS \n 5. Volver atras");
+    } while (seleccionarFondo >= 6);
+
     let CantidadDias = 0;
     let rendimiento = 0;
       
@@ -136,10 +143,8 @@ function invertirFCI(saldoDisponible) {
     }
     else {
         alert('No ha ingresado una opción válida');
-    }    
-    
-    
-
+    }      
+   
     
 }
 
@@ -158,6 +163,7 @@ function comprarCripto() {
 
 function menuPrestamos() {
 
+    do  {
     opcionSeleccionPrestamos = prompt("Seleccione una opci{on}: \n 1. Simular prestamo \n 2. Pagar Cuota \n 3. Mis prestamos \n 4. Volver atras");
 
 
@@ -179,6 +185,7 @@ function menuPrestamos() {
             alert("Ha ingresado una opción inválida");            
             break;
     }   
+    } while (opcionSeleccionPrestamos != 4);
 }
 
 function simularPrestamo() {
