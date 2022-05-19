@@ -1,5 +1,3 @@
-
-
 /* Variables globales  */
 
 const hardPassword = "1234";
