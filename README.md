@@ -42,11 +42,12 @@ Desafio 6 y 7. Incoorporar Arryas y Higher order functions 31/05/2022 - 02/06/20
   - Se puede ejecutar el index.html y luego hacer click in "login"
   - Se puede ejecutar directamente el archivo login.html
  - Para poder ejecutar las pruebas, se recomienda continuar los siguientes pasoso:
-   1. registrar al menos 3 usuarios (opcion 1):
+   1. registrar al menos 3 usuarios (opción 1):
       - User: usuario7; Pass: 12312322 (8 caracteres o mas), Tiene prestamo (si/no): si; Valor de prestamo: 14999;
       - User: usuario3; Pass: 12312322 (8 caracteres o mas), Tiene prestamo (si/no): no; 
       - User: usuario4; Pass: 12312322 (8 caracteres o mas), Tiene prestamo (si/no): si; Valor de prestamo: 7500;
-   2. Listar los usuarios (opcion 3)
-   3. Logear un usuario (opcion2)
-   4. Buscar un usuario registrado (opcion4)
+   2. Listar los usuarios (opción 3)
+   3. Logear un usuario (opción 2)
+   4. Buscar un usuario registrado (opción 4)
+   5. Order el array de usuarios (opción 6)
 
