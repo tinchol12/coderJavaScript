@@ -3,7 +3,7 @@
 Desafio Complementario 01: 18/05/2022 
  - Dentro del index.html, cambiar el href a "uno.js", "dos.js", o "tres.js" para ejecutar cada uno de los ejercicios.
 
- Desafio: Simulador interactivo. 24/05/2022
+Desafio: Simulador interactivo. 24/05/2022
  - HTML y CSS incorporados. Primera etapa del proyecto.
  - Para poder en uso el algoritmo solicitado, debe ejecutar el archivo entregable.html.
    No requiere de cambiar de script para ejecutar los diferentes casos en donde se aplicaron los temas dados para este examen.
@@ -35,3 +35,18 @@ Desafio Complementario 01: 18/05/2022
    Ingresar el monto a simular y la cantidad de cuotas.
    2.
    Se presenta el detalle del prestamo por consola y un resumen en una alerta.
+
+Desafio 6 y 7. Incoorporar Arryas y High order functions 31/05/2022 - 02/06/2022
+ - En esta entrega, se comienza a desarrollar algunas funcionalidades relacionadas al usuario. Se puede registrar, logera, listar, y buscar un usuario.
+ - HTML a ejecutar: 
+  - Se puede ejecutar el index.html y luego hacer click in "login"
+  - Se puede ejecutar directamente el archivo login.html
+ - Para poder ejecutar las pruebas, se recomienda continuar los siguientes pasoso:
+   1. registrar al menos 3 usuarios (opcion 1):
+      - User: usuario7; Pass: 12312322 (8 caracteres o mas), Tiene prestamo (si/no): si; Valor de prestamo: 14999;
+      - User: usuario3; Pass: 12312322 (8 caracteres o mas), Tiene prestamo (si/no): no; 
+      - User: usuario4; Pass: 12312322 (8 caracteres o mas), Tiene prestamo (si/no): si; Valor de prestamo: 7500;
+   2. Listar los usuarios (opcion 3)
+   3. Logear un usuario (opcion2)
+   4. Buscar un usuario registrado (opcion4)
+

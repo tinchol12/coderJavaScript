@@ -15,6 +15,25 @@ let montoPrestamoSimular = 0;
 const nombreUsuario = prompt("Usuario: ");
 let password = prompt("Password: ");
 
+
+for (let i = 1; i < 5; i++) {
+        
+    if (password == hardPassword) {
+        alert('Bienvenido ' + nombreUsuario);
+        openMenuPrincipal();
+        break;        
+    } else {
+        alert('Usuario o contraseña incorrectos. Recuerde que tiene ' + counter + ' intentos disponibles');
+        password = prompt("Password: ");  
+        counter--; 
+    }      
+ 
+    if(counter == 0) {
+        alert('Usted ha agotado los intentos disponibles. Por favor, intente mas tarde');
+    }   
+}
+
+/*
 do  {
     if (password == hardPassword) {
         alert('Bienvenido ' + nombreUsuario);
@@ -29,6 +48,7 @@ do  {
 if(counter == 0) {
     alert('Usted ha agotado los intentos disponibles. Por favor, intente mas tarde');
 }
+*/
 
 
 /* Funciones  */
@@ -97,6 +117,7 @@ function invertirFCI(saldoDisponible) {
     if(seleccionarFondo === 1){
         CantidadDias = prompt("Ingrese la cantidad de dias que desea invertir: ");
         formulaRendimiento = (ualaFci / 365) + 1;
+
         rendimiento = Number(CantidadDias) * ((Number(formulaRendimiento)) * Number(saldoDisponible) - Number(saldoDisponible));
         alert("Obtiene: $" + rendimiento.toFixed(2) + " invirtiendo $" + saldoDisponible + " durante " + CantidadDias + " dias.");
         console.log(`seleccionarFondo ${seleccionarFondo}, formulaRendimiento ${formulaRendimiento}`);
@@ -105,8 +126,8 @@ function invertirFCI(saldoDisponible) {
     }
     else if(seleccionarFondo === 2){
         CantidadDias = prompt("Ingrese la cantidad de dias que desea invertir: ");
-
         formulaRendimiento = (ualaMeli / 365) + 1;
+
         rendimiento = Number(CantidadDias) * ((Number(formulaRendimiento)) * Number(saldoDisponible) - Number(saldoDisponible));
         alert("Obtiene: $" + rendimiento.toFixed(2) + " invirtiendo $" + saldoDisponible + " durante " + CantidadDias + " dias.");
         console.log(`seleccionarFondo ${seleccionarFondo}, formulaRendimiento ${formulaRendimiento}`);
@@ -115,8 +136,8 @@ function invertirFCI(saldoDisponible) {
     }
     else if(seleccionarFondo === 3){
         CantidadDias = prompt("Ingrese la cantidad de dias que desea invertir: ");
-
         formulaRendimiento = (ualaBalanz / 365) + 1;
+
         rendimiento = Number(CantidadDias) * ((Number(formulaRendimiento)) * Number(saldoDisponible) - Number(saldoDisponible));
         alert("Obtiene: $" + rendimiento.toFixed(2) + " invirtiendo $" + saldoDisponible + " durante " + CantidadDias + " dias.");
         console.log(`seleccionarFondo ${seleccionarFondo}, formulaRendimiento ${formulaRendimiento}`);
@@ -125,8 +146,8 @@ function invertirFCI(saldoDisponible) {
     }
     else if(seleccionarFondo === 4){
         CantidadDias = prompt("Ingrese la cantidad de dias que desea invertir: ");
-
         formulaRendimiento = (ualaFci / 365) + 1;
+
         let rendimientoUala = Number(CantidadDias) * ((Number(formulaRendimiento)) * Number(saldoDisponible) - Number(saldoDisponible));
         formulaRendimiento = (ualaMeli / 365) + 1;
         let rendimientoMeli = Number(CantidadDias) * ((Number(formulaRendimiento)) * Number(saldoDisponible) - Number(saldoDisponible));
