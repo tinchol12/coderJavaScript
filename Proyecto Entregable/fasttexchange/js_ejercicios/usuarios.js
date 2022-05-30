@@ -77,7 +77,7 @@ function validarPrestamos(){
 
 do{
     //Menu
-    opcion = prompt("Ingrese una opción para continuar: \n 1 - Registrarse  \n 2 - Login \n 3 - Listar \n 4 - Buscar \n 5 - Salir");
+    opcion = prompt("Ingrese una opción para continuar: \n 1 - Registrarse  \n 2 - Login \n 3 - Listar \n 4 - Buscar \n 5 - Ordenar \n 6 - Salir");
     switch(opcion){
         case '1':
             usuario = prompt("Usuario: ");
@@ -145,9 +145,26 @@ do{
         case '4':                       
         buscar = prompt("Ingrese el usuario a buscar: ");        
         console.table(Usuarios.find(usuario => usuario.user.includes(buscar)))
+        break;  
+        
+        case '5':                       
+        
+        Usuarios.sort(function(a, b){
+            if(a.user > b.user){
+                return 1;
+            }
+            if(a.user < b.user){
+                return -1;
+            }
+            return 0;
+        });
+        console.table(Usuarios);
+        alert("Tabla ordenada por usuario");
+        
         break;              
 
-        case '5':
+
+        case '6':
             salir = true;
             alert("Gracias por utilizar nuestro servicio!");
             break;
