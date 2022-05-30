@@ -1,99 +1,158 @@
 
-class Usuarios {
+let usuario, password, opcion, prestamos, montoPrestamo, buscar;
+let salir = false;
 
-    constructor(nombre, user, password, saldo, prestamos ) {
-        this.nombre = nombre;
+
+class Usuario{
+    constructor(user, password, prestamos, montoPrestamo){
         this.user = user;
         this.password = password;
-        this.saldo = saldo;
         this.prestamos = prestamos;
-    }    
+        this.montoPrestamo = montoPrestamo;        
+    } 
 
-    getNombre() { return this.nombre; }
-    getUser() { return this.user; }
-    getPassword() { return this.password; }
-    getSaldo() { return this.saldo; }
-    getPrestamos() { return this.prestamos;}
-    setNombre(nombre) { this.nombre = nombre; }
-    setUser(user) { this.user = user; }
-    setPassword(password) { this.password = password; }
-    setSaldo(saldo) { this.saldo = saldo; }
-  
-
-    mostrar() {
-        console.log( "\n " + this.nombre + " | " + this.user + " | " + this.password + " | " + this.saldo + " | " + this.prestamos );
+    saludoLogin(){
+        alert("Bienvenido: " + this.user);
     }
 
-    randomUsrName() {        
-        let usrName = Math.floor(Math.random()*117)       
-        return usrName;
+    mostrarPrestamo(){
+        alert("Monto de prestamo: $" + this.montoPrestamo + ". Gracias por confiar en nosotros.");
     }
 
-    randomPassword() {        
-        let ranPassword = Math.floor(Math.random()*254869)     
-        return ranPassword;
-    }
-    
-    randomSaldo() {        
-        let ranSaldo = Math.floor(Math.random()*100000)     
-        return ranSaldo;
-    }
-    
-    
 }
 
-function generadorUsuarios() {
+const Usuarios = [];
 
-    let cantidad = +prompt("Ingreses la cantidad de usuarios con prestamos a crear");
-
-    console.log("===========================================================");
-    
-    for (let i = 1; i <= cantidad; i++) {
-    
-        let metodosDelUsuario = new Usuarios();
-        let usrName = metodosDelUsuario.randomUsrName();
-        let ranSaldo = metodosDelUsuario.randomSaldo();
-        let ranPassword = metodosDelUsuario.randomPassword();    
-    
-        let usuario = new Usuarios( "Martin"+[i] , 'martin_'+[usrName] , "1234_"+ ranPassword ,  +ranSaldo,  + true);    
-        usuario.mostrar();
-        
-        localStorage.setItem(i, JSON.stringify(usuario));
-    
+//Crear un usuario, validando que el userName tenga al menos 5 caracteres
+function validarString(){
+    if(!usuario.match("[A-Za-z]{3,10}")){
+        do{
+            alert("No ingreso un usuario valido!!");
+            usuario = prompt("Ingrese nuevamente un usuario de 3 caracteres minimo:");
+        }while(!usuario.match("[A-Za-z]{3,10}"));
+        return true;
+    } else {
+        return true;
     }
-    
-    console.log("\n ===========================================================");
-
-    cantidad = +prompt("Ingreses la cantidad de usuarios sin prestamos a crear");
-
-    for (let j = 1; j <= cantidad; j++) {
-    
-        let metodosDelUsuario = new Usuarios();
-        let usrName = metodosDelUsuario.randomUsrName();
-        let ranSaldo = metodosDelUsuario.randomSaldo();
-        let ranPassword = metodosDelUsuario.randomPassword();
-    
-    
-        let usuario = new Usuarios( "Martin"+[j] , 'martin_'+[usrName] , "1234_"+ ranPassword ,  +ranSaldo,  + false);    
-        usuario.mostrar();
-        
-        localStorage.setItem(j, JSON.stringify(usuario));
-            
-    }
-
-    console.log("\n ===========================================================");
 }
 
-generadorUsuarios();
+//validacion si el usuario existe dentro del array
+function validarUser(usuario){
+    if (Usuarios.some(username => username.user === usuario)){
+        return true;
+    } else {
+        return false;
+    }
+}
 
+//validacion de password de mas de 8 caracteres
+function validarPassword(){
+    if(password.length < 8){
+        do{
+            alert("No ingreso una contraseña valida!!");
+            password = prompt("Ingrese nuevamente la contraseña de 8 caracteres minimo: ");
+        }while(password.length < 8);
+        return true;
+    } else {
+        return true;
+    }
+}
 
+function validarPrestamos(){      
+       
+    if(prestamos === 'si' ){
+        montoPrestamo = +prompt("Monto del préstamo asociado: $ ");
+    } else if (prestamos === 'no'){
+        montoPrestamo = 0;
+    }   
+    else {
+        do{
+            alert("Por favor ingrese una respuesta válida")
+            prestamos = prompt("El usuario tiene un prestamo asociado? (si,no): ");           
+        } while(prestamos != 'si' && prestamos != 'no');                  
 
+    }
+ 
+}
 
+do{
+    //Menu
+    opcion = prompt("Ingrese una opción para continuar: \n 1 - Registrarse  \n 2 - Login \n 3 - Listar \n 4 - Buscar \n 5 - Salir");
+    switch(opcion){
+        case '1':
+            usuario = prompt("Usuario: ");
+            validarString();
+            password = prompt("Contraseña: ");
+            validarPassword();
+            prestamos = prompt("El usuario tiene un prestamo cargado?: (si/no) ");
+            validarPrestamos();        
 
+            //Validar que esta creando, no exista en la base de datos
+            if(validarString() && validarPassword()){
+                if(!validarUser(usuario)) {
+                    Usuarios.push(new Usuario(usuario,password,prestamos, montoPrestamo));
+                    alert("El usuario se registro correctamente!");
+                } else {
+                    do{
+                        alert("El ususario ya existe!");
+                        usuario = prompt("ingrese su usuario: ");
+                        validarString();
+                    }while(validarUser(usuario));
 
+                    Usuarios.push(new Usuario(usuario,password, prestamos,montoPrestamo));
+                    alert("El usuario se registro correctamente!");
+                    
+                }
+               
+            }
 
+            break;
+        
+        case '2':
+            usuario = prompt("ingrese su usuario: ");
+            validarString();
+            validarUser(usuario);
+            password = prompt("ingrese su contraseña: ");
+            validarPassword();
 
-  
+            if(validarUser(usuario) && validarPassword()){
+                for(const _Usuario of Usuarios){
+                    if(usuario === _Usuario.user){
+                        _Usuario.saludoLogin();                       
 
+                        if(_Usuario.prestamos === 'si'){                        
+                            let preg = prompt("El usuario tiene un préstamo asociado, desea ver el monto? (si/no)");
+                            if(preg === 'si'){
+                            _Usuario.mostrarPrestamo();}
+                            else if(preg === 'no'){
+                                alert("Gracias por su visita!");
+                            }
+                        }
+                        break;
+                    }
+                }
+            } else {
+                alert("El usuario ingresado no existe!");
+            }
 
+            break;
+        
+        case '3':
+            console.table(Usuarios);
+            alert("Tabla generada por consola");            
+            break;
+
+        case '4':                       
+        buscar = prompt("Ingrese el usuario a buscar: ");        
+        console.table(Usuarios.find(usuario => usuario.user.includes(buscar)))
+        break;              
+
+        case '5':
+            salir = true;
+            alert("Gracias por utilizar nuestro servicio!");
+            break;
+        default:
+            alert("ingrese una opcion valida!");
+    }
+}while(salir == false);
 
