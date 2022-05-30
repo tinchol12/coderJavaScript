@@ -36,7 +36,7 @@ Desafio: Simulador interactivo. 24/05/2022
    2.
    Se presenta el detalle del prestamo por consola y un resumen en una alerta.
 
-Desafio 6 y 7. Incoorporar Arryas y High order functions 31/05/2022 - 02/06/2022
+Desafio 6 y 7. Incoorporar Arryas y Higher order functions 31/05/2022 - 02/06/2022
  - En esta entrega, se comienza a desarrollar algunas funcionalidades relacionadas al usuario. Se puede registrar, logera, listar, y buscar un usuario.
  - HTML a ejecutar: 
   - Se puede ejecutar el index.html y luego hacer click in "login"
