@@ -41,7 +41,7 @@ Desafio 6 y 7. Incoorporar Arryas y Higher order functions 31/05/2022 - 02/06/20
  - HTML a ejecutar: 
   - Se puede ejecutar el index.html y luego hacer click in "login"
   - Se puede ejecutar directamente el archivo login.html
- - Para poder ejecutar las pruebas, se recomienda continuar los siguientes pasoso:
+ - Para poder ejecutar las pruebas, se recomienda continuar los siguientes paso:
    1. registrar al menos 3 usuarios (opción 1):
       - User: usuario7; Pass: 12312322 (8 caracteres o mas), Tiene prestamo (si/no): si; Valor de prestamo: 14999;
       - User: usuario3; Pass: 12312322 (8 caracteres o mas), Tiene prestamo (si/no): no; 
