@@ -51,3 +51,11 @@ Desafio 6 y 7. Incoorporar Arryas y Higher order functions 31/05/2022 - 02/06/20
    4. Buscar un usuario registrado (opción 4)
    5. Order el array de usuarios (opción 6)
 
+Desafio 8 - Manejo del DOM 07/06/2022
+   Ejecutar el archivo register.html y:
+ - 1. Completar el formulario
+ - 2. Enviar el formulario --> Crea labels en el DOM
+ - 3. Click en Validar Passwords --> Valida que las contraseñas sean iguales o no
+ - 4. Click en Limpiar Labels --> Elimina los labels generados
+ - 5. Click en Limpiar Formulario --> Elimina los valores cargados en el formulario
+ 
