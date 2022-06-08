@@ -58,4 +58,17 @@ Desafio 8 - Manejo del DOM 07/06/2022
  - 3. Click en Validar Passwords --> Valida que las contraseñas sean iguales o no
  - 4. Click en Limpiar Labels --> Elimina los labels generados
  - 5. Click en Limpiar Formulario --> Elimina los valores cargados en el formulario
+
+ Desafio 9 - Eventos del DOM 09/06/2022
+   Se adaparon los cambios sugeridos por el tutor.
+   Se agrega un evento onclick en el titulo del form
+   Se agrega el uso del evento DOMContentLoaded para validar que el DOM se haya cargado (mensaje por consola)
+   Se agrega el preventDefault para el formulario    
+   Ejecutar el archivo register.html y:   
+ - 1. Completar el formulario
+ - 2. Enviar el formulario --> Crea labels en el DOM
+ - 3. Click en Validar Passwords --> Valida que las contraseñas sean iguales o no
+ - 4. Click en Limpiar Labels --> Elimina los labels generados
+ - 5. Click en Limpiar Formulario --> Elimina los valores cargados en el formulario
+ 
  
