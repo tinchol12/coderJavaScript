@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Martin",
+        "lastName": "Gomez",
+        "email": "usuario@admin.com",
+        "edad": "32",
+        "password1": "1234-3322",
+        "password2": "1234-3322"
+    },
+    {
+        "name": "Nicolas",
+        "lastName": "Perez",
+        "email": "usuario@middle.com",
+        "edad": "28",
+        "password1": "1234-3333",
+        "password2": "1234-3333"
+    },
+    {
+        "name": "Florencia",
+        "lastName": "Garcia",
+        "email": "usuario@final.com",
+        "edad": "36",
+        "password1": "1234-1122",
+        "password2": "1234-1122"
+    }
+
+]
