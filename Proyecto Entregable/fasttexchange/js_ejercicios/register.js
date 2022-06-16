@@ -8,8 +8,11 @@ const edad = document.getElementById('age');
 const contrasena = document.getElementById('password');
 const confirmarContrasena = document.getElementById('password2');
 const btnLimpiar = document.getElementById('limpiarFormulario');
+const btnCargar = document.getElementById('cargarValores');
+const btnCargarJson = document.getElementById('cargarValoresJson');
 const btnValidarPassword = document.getElementById('validarPasswords');
 let flagValidPass = false;
+let flagLimpiarFormulario = false;
 
 let nuevoLabelName ="";
 
@@ -25,6 +28,7 @@ let pasarResultados = () => {
     let nuevoLabelLastname = "Apellido Registrado: " + apellidoUsuario.value;
 
     document.getElementById('resultados'). innerHTML = nuevoLabelName  + '<p>' +  nuevoLabelLastname + '<p>' + nuevoLabelEmail + '<p>' + nuevoLabelAge + '<p>' + nuevoLabelPassword + '<p>' + nuevoLabelPassword2 + '<p>' ;
+    guardarValores();
 }
 
 let limpiarFormulario = () => {
@@ -35,6 +39,9 @@ let limpiarFormulario = () => {
     contrasena.value = '';
     confirmarContrasena.value = '';
     edad.value = '';
+
+    localStorage.removeItem('usuario')
+    localStorage.clear()
 
 }
 
@@ -57,7 +64,76 @@ let validarPass = () => {
 
 let limpiarLabels = () => {
     document.getElementById('resultados').innerHTML = '';
-    console.log('Se borro los resultados');
+    console.log('Se borro los resultados');   
+}
+
+let guardarValores = () => {
+    let usuario = {
+        nombre: nombreUsuario.value,
+        apellido: apellidoUsuario.value,
+        correo: correo.value,
+        edad:  edad.value,
+        contrasena: contrasena.value,
+        confirmarContrasena: confirmarContrasena.value
+    }
+    
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+    let datosUsuario = JSON.parse(localStorage.getItem('usuario'));
+    console.log(datosUsuario);
+
+    const datosUsuarioJSON = JSON.stringify(datosUsuario);
+    console.log("El objeto datoUsuario convertido a Json : " + datosUsuarioJSON);
+    console.log("Tipo de dato: " + typeof(datosUsuarioJSON));
+}
+
+let obtenerValores = () => {
+    let datosUsuario = JSON.parse(localStorage.getItem('usuario'));
+    console.log("nombre: " + datosUsuario.nombre + " apellido: " + datosUsuario.apellido + " correo: " + 
+                             datosUsuario.correo + " edad: " + datosUsuario.edad + " contrasena: " + datosUsuario.contrasena + " confirmarContrasena: " + datosUsuario.confirmarContrasena);
+    alert("nombre: " + datosUsuario.nombre + " apellido: " + datosUsuario.apellido + " correo: " + 
+    datosUsuario.correo + " edad: " + datosUsuario.edad + " contrasena: " + datosUsuario.contrasena + " confirmarContrasena: " + datosUsuario.confirmarContrasena);;
+}
+
+let cargarUsuariosJSON = () => {
+    document.querySelector('#botonJson').addEventListener('click0', traerDatosJson());
+}
+
+let traerDatosJson = () => {
+
+    //AJAX
+    const xhttp = new XMLHttpRequest();    
+
+    xhttp.open('GET','usuarios.json',true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200)
+        {
+            let datosUsuario = JSON.parse(xhttp.responseText);
+            console.log(datosUsuario);
+            
+            let res = document.querySelector('#res');
+            res.innerHTML = '';
+            for(let i = 0; i < datosUsuario.length; i++){
+                
+            }
+
+            for(let item of datosUsuario)
+            {
+                res.innerHTML += `
+                
+                        <tr>
+                            <td>${item.name}</td>
+                            <td>${item.email}</td>
+                            <td>${item.edad}</td>
+                            <td>${item.password1}</td>                                                                                           
+                        </tr>               
+                
+                `;
+            }
+
+
+        }
+    }
 }
 
 //Eventos sobre el titulo
@@ -144,39 +220,35 @@ btnEnviar.addEventListener('click', () => {
 });
 
 btnLimpiar.addEventListener('click', () => {
-    limpiarFormulario();
-    alert('Se borraron los datos cargados en los campos del formulario');
-    console.log('Se borraron los datos cargados en los campos del formulario');
+
+    let pregunta = "";
+
+    if(flagLimpiarFormulario = true){
+        pregunta = prompt('Desea limpiar el formulario y el storage');
+        if(pregunta == 'si')
+        {
+            limpiarFormulario();
+            alert('Se borraron los datos cargados en los campos del formulario')
+            console.log('Se borraron los datos cargados en los campos del formulario')
+        }
+        else
+        {
+            alert('No se limpio el formulario')
+        }
+    }
+    else
+    {
+        alert("el formulario ya esta limpio")
+    }
+    
 });
 
+btnCargar.addEventListener('click', () => {
+    obtenerValores();
+});
 
+btnCargarJson.addEventListener('click', () => {
 
+    cargarUsuariosJSON();
 
-
-/* 
-
-DONE 1 - Estaría bueno que le agregues verificación para que no te permita enviar el formulario si alguno de los campos está vacío. 
-También, por ahí podrías unificar la lógica de verificar la contraseña ingresada y el envío del formulario, para que pase todo a la vez cuando se manda el formulario.
-
-DONE 2 - La mayoría de variables en el archivo "register.js" nunca son redefinidas a lo largo del código, 
-por lo que creo que sería mejor si las declararas como constantes con const, en vez de let, así se deja explicito que son constantes y nunca cambian.
-
-DONE 3 - En la función "pasarResultados" vos estás tomando todos los valores del formulario, y los vas agregando 
-uno a uno a div con ID "resultados". El texto que estás agregando es texto plano, que no está envuelto por ninguna etiqueta HTML.
-Esto no es lo más recomendable, siempre nuestro texto en el HTML tiene que estar adentro de algún otro tag (En una etiqueta "p" por ejemplo).
-
-DONE 4 - También, dentro de esta función, fijate que tuviste que usar varias veces "document.getElementById('resultados')" 
-para obtener el div de resultados. En estos casos, donde se tienen que repetir muchas veces una misma línea de código, lo mejor es crear
- una constante aparte que obtenga ese div, y luego usarla donde la necesites.
-
-DONE 5 - Por último, fijate que también estás buscando dos veces los inputs donde se ingresan los datos, al principio del archivo obtenés todos los inputs,
- y en el inicio de la función los volvés a obtener. En vez de volver a obtenerlos dentro de la función, podrías simplemente utilizar los que ya buscaste afuera,
-  como haces en la función "limpiarFormulario".
-
-DONE 6 - Fijate que al botón de limpiar labels le estás agregando dos eventos que hacen lo mismo. En las líneas 16 a 28 declaras un evento con ese botón,
- y en las líneas 110 a 114 declaras otro.
-
-*/
-
-
-
+});

@@ -71,4 +71,11 @@ Desafio 8 - Manejo del DOM 07/06/2022
  - 4. Click en Limpiar Labels --> Elimina los labels generados
  - 5. Click en Limpiar Formulario --> Elimina los valores cargados en el formulario
  
- 
+
+ Desafio 10 - JSON y LocalStrorage 16/06/2022
+   Ejecutar el archivo register.html y:
+ - 1. Completar el formulario
+ - 2. Enviar el formulario --> Almacena los valores del formulario en el local storage
+ - 3. Click en el boton "Ver los valores del storage" para ver en en consola y en un alert los datos cargados previamente
+ - 4. Al hacer click en limpiar formulario, ahora tambien limpia el storage. Se agrega mas lógica para que el usuario decida si borra o no el formulario y el storage.
+ - 5. Boton "Cargar Valores JSON": Carga los datos de un archivo.json (con AJAX) en una tabla en el HTML.
