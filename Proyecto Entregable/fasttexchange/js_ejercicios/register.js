@@ -127,7 +127,7 @@ let obtenerValores = () => {
 }
 
 let cargarUsuariosJSON = () => {
-    document.querySelector('#botonJson').addEventListener('click0', traerDatosJson());
+    document.querySelector('#botonJson').addEventListener('click', traerDatosJson);
 }
 
 let traerDatosJson = () => {
