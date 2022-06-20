@@ -127,7 +127,7 @@ let obtenerValores = () => {
 }
 
 let cargarUsuariosJSON = () => {
-    document.querySelector('#botonJson').addEventListener('click', traerDatosJson);
+    document.querySelector('#botonJson').addEventListener('click', traerDatosJson());
 }
 
 let traerDatosJson = () => {
@@ -275,7 +275,6 @@ btnLimpiar.addEventListener('click', () => {
           }).then((result) => {
             if (result.isConfirmed) {
               Swal.fire('Se borraron los datos del formulario y del storage', '', 'success')
-              limpiarFormulario();
               console.log('Se borraron los datos cargados en los campos del formulario')
             } else if (result.isDenied) {
               Swal.fire('No se borró el formulario ni el storage', '', 'info')
@@ -310,31 +309,6 @@ btnCargarJson.addEventListener('click', () => {
 let confirmarEleminar = () => {
 
 
-        /* inputOptions can be an object or Promise */
-        const inputOptions = new Promise((resolve) => {
-            setTimeout(() => {
-            resolve({
-                'Rojo': 'Rojo',
-                'Verde': 'Verde',
-                'Azul': 'Azul'
-            })
-            }, 1000)
-        })
-        
-        const { value: color } = await Swal.fire({
-            title: 'Selecciona el color AZUL para confirmar el borrado',
-            input: 'radio',
-            inputOptions: inputOptions,
-            inputValidator: (value) => {
-            if (!value) {
-                return 'Seleccione un valor!'
-            }
-            }
-        })
-        
-        if (color) {
-            Swal.fire({ html: `Ha seleccionado el color: ${color}` })
-        }
 
 
 }
