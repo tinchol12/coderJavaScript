@@ -1,4 +1,5 @@
 
+
 const btnLimpiarLabels = document.getElementById('limpiarLabels');
 const btnEnviar = document.getElementById('enviarBtn');
 const nombreUsuario = document.getElementById('name');   
@@ -49,13 +50,23 @@ let validarPass = () => {
    
     if(contrasena.value == confirmarContrasena.value)
     {
-        alert('Las contraseñas coinciden');
+         
+        Swal.fire({
+            icon: 'success',
+            title: 'OK!',
+            text: 'Las contraseñas coinciden',
+        })
+        
         console.log('Las contraseñas coinciden');
         flagValidPass = true;
     }
     else
     {
-        alert('Las contraseñas no coinciden');
+        Swal.fire({
+            icon: 'error',
+            title: 'FAIL!',
+            text: 'Las contraseñas NO coinciden',
+        })
         console.log('Las contraseñas no coinciden');
         flagValidPass = false;
     }
@@ -65,6 +76,16 @@ let validarPass = () => {
 let limpiarLabels = () => {
     document.getElementById('resultados').innerHTML = '';
     console.log('Se borro los resultados');   
+
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Los resultados han sido borrados',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
+
 }
 
 let guardarValores = () => {
@@ -90,8 +111,19 @@ let obtenerValores = () => {
     let datosUsuario = JSON.parse(localStorage.getItem('usuario'));
     console.log("nombre: " + datosUsuario.nombre + " apellido: " + datosUsuario.apellido + " correo: " + 
                              datosUsuario.correo + " edad: " + datosUsuario.edad + " contrasena: " + datosUsuario.contrasena + " confirmarContrasena: " + datosUsuario.confirmarContrasena);
-    alert("nombre: " + datosUsuario.nombre + " apellido: " + datosUsuario.apellido + " correo: " + 
-    datosUsuario.correo + " edad: " + datosUsuario.edad + " contrasena: " + datosUsuario.contrasena + " confirmarContrasena: " + datosUsuario.confirmarContrasena);;
+    Swal.fire({
+        icon: 'success',
+        title: 'OK!',
+        text: "nombre: " + datosUsuario.nombre 
+            + " apellido: " + datosUsuario.apellido 
+            + " correo: " +  datosUsuario.correo 
+            + " edad: " + datosUsuario.edad 
+            + " contrasena: " + datosUsuario.contrasena 
+            + " confirmarContrasena: " + datosUsuario.confirmarContrasena
+      })
+      
+    console.log('Faltan datos por completar');
+
 }
 
 let cargarUsuariosJSON = () => {
@@ -113,9 +145,6 @@ let traerDatosJson = () => {
             
             let res = document.querySelector('#res');
             res.innerHTML = '';
-            for(let i = 0; i < datosUsuario.length; i++){
-                
-            }
 
             for(let item of datosUsuario)
             {
@@ -179,17 +208,22 @@ form.addEventListener('submit', enviarFormulario);
 
 
 btnLimpiarLabels.addEventListener('click', () => {
-    let valores = prompt("Desea borrar los valores de las registrados (si/no)");
- 
-     if (valores == 'si') 
-     {
-        limpiarLabels();
-     }
-     else
-     {
-         alert('No se cargaron los valores')
-     }
- 
+   
+    Swal.fire({
+        title: 'Desea borrar los valores de las registrados',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Si',
+        denyButtonText: `No`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire('Se borraron los datos las labels', '', 'success')
+          limpiarLabels();
+          console.log('Se borraron las labels')
+        } else if (result.isDenied) {
+          Swal.fire('No se cargaron los valores', '', 'info')
+        }
+      })
  });
 
 btnValidarPassword.addEventListener('click', () => {
@@ -200,7 +234,12 @@ btnEnviar.addEventListener('click', () => {
     
     if(nombreUsuario.value == '' || apellidoUsuario.value == '' || correo.value == '' || edad.value == '' || contrasena.value == '' || confirmarContrasena.value == '')
     {
-        alert('Faltan datos por completar');
+        Swal.fire({
+            icon: 'error',
+            title: 'FAIL',
+            text: 'Faltan datos por completar!',
+          })
+
         console.log('Faltan datos por completar');
     }
     else 
@@ -212,7 +251,13 @@ btnEnviar.addEventListener('click', () => {
             if(flagValidPass == true)
             {
                 pasarResultados();
-                alert('Generando nuevas labels con los datos ingresados en el formulario');
+                Swal.fire({
+                    icon: 'success',
+                    title: 'OK!',
+                    text: 'Se Generaron las labels debajo del formulario!',
+                  })
+                  
+                console.log('Faltan datos por completar');
             }
 
         }
@@ -220,28 +265,28 @@ btnEnviar.addEventListener('click', () => {
 });
 
 btnLimpiar.addEventListener('click', () => {
+          
+        Swal.fire({
+            title: 'Quiere borrar el formulario y el storage?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Si',
+            denyButtonText: `No`,
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire('Se borraron los datos del formulario y del storage', '', 'success')
+              limpiarFormulario();
+              console.log('Se borraron los datos cargados en los campos del formulario')
+            } else if (result.isDenied) {
+              Swal.fire('No se borró el formulario ni el storage', '', 'info')
+            }
+          })
 
-    let pregunta = "";
+    });
 
-    if(flagLimpiarFormulario = true){
-        pregunta = prompt('Desea limpiar el formulario y el storage');
-        if(pregunta == 'si')
-        {
-            limpiarFormulario();
-            alert('Se borraron los datos cargados en los campos del formulario')
-            console.log('Se borraron los datos cargados en los campos del formulario')
-        }
-        else
-        {
-            alert('No se limpio el formulario')
-        }
-    }
-    else
-    {
-        alert("el formulario ya esta limpio")
-    }
+   
     
-});
+
 
 btnCargar.addEventListener('click', () => {
     obtenerValores();
@@ -249,6 +294,52 @@ btnCargar.addEventListener('click', () => {
 
 btnCargarJson.addEventListener('click', () => {
 
+
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'La tabla se generó debajo del formulario',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
     cargarUsuariosJSON();
 
 });
+
+let confirmarEleminar = () => {
+
+
+        /* inputOptions can be an object or Promise */
+        const inputOptions = new Promise((resolve) => {
+            setTimeout(() => {
+            resolve({
+                'Rojo': 'Rojo',
+                'Verde': 'Verde',
+                'Azul': 'Azul'
+            })
+            }, 1000)
+        })
+        
+        const { value: color } = await Swal.fire({
+            title: 'Selecciona el color AZUL para confirmar el borrado',
+            input: 'radio',
+            inputOptions: inputOptions,
+            inputValidator: (value) => {
+            if (!value) {
+                return 'Seleccione un valor!'
+            }
+            }
+        })
+        
+        if (color) {
+            Swal.fire({ html: `Ha seleccionado el color: ${color}` })
+        }
+
+
+}
+
+
+
+
+

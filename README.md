@@ -79,3 +79,12 @@ Desafio 8 - Manejo del DOM 07/06/2022
  - 3. Click en el boton "Ver los valores del storage" para ver en en consola y en un alert los datos cargados previamente
  - 4. Al hacer click en limpiar formulario, ahora tambien limpia el storage. Se agrega mas lógica para que el usuario decida si borra o no el formulario y el storage.
  - 5. Boton "Cargar Valores JSON": Carga los datos de un archivo.json (con AJAX) en una tabla en el HTML.
+
+ Desafio 12 - Librerias
+   Ejecutar el archivo register.html y:
+ - 1. Se integra la libreria Sweetalert2 reemplazando los promt y los alerts
+ 
+ 
+ 
+ 
+ 
