@@ -19,7 +19,7 @@ function calcularCuota(monto, interes, tiempo){
         mes_actual.add(1, 'month');    
 
         let pagoInteres=0, pagoCapital = 0, cuota = 0;
-        cuota = monto * (Math.pow(1+interes/100, tiempo)*interes/100)/(Math.pow(1+interes/100, tiempo)-1);
+        cuota = monto * (Math.pow(1 + interes / 100, tiempo) * interes / 100)/(Math.pow(1 + interes / 100, tiempo) - 1);
 
         for(let i = 1; i <= tiempo; i++) {
             pagoInteres = parseFloat(monto*(interes/100));
