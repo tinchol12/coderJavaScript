@@ -22,10 +22,10 @@
             <nav class="navbar">
                 <div class="collapse navbar-collapse single-page-nav">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="#section-1"><span class="icn"><i class="fas fa-2x fa-air-freshener"></i></span> Prestamo </a></li>
-                        <li class="nav-item"><a class="nav-link" href="#section-2"><span class="icn"><i class="fab fa-2x fa-battle-net"></i></span> Cambio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#section-3"><span class="icn"><i class="far fa-2x fa-images"></i></span> Criptos</a></li>
                         <li class="nav-item"><a class="nav-link" href="#section-4"><span class="icn"><i class="far fa-2x fa-comments"></i></span> Registrate</a></li>                      
+                        <li class="nav-item"><a class="nav-link" href="#section-1"><span class="icn"><i class="fas fa-2x fa-air-freshener"></i></span> Prestamo </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#section-3"><span class="icn"><i class="far fa-2x fa-images"></i></span> Criptos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#section-2"><span class="icn"><i class="fab fa-2x fa-battle-net"></i></span> Cambio</a></li>
                     </ul>
                 </div>
             </nav>
@@ -42,8 +42,45 @@
         <main id="content-box" class="order-first"> 
 
             
+
+            <!-- Registrarse -->
+            <section class="gwork-section section" data-parallax="scroll" data-image-src="img/Block2.jpg" id="section-4">               
+                <div class="container">
+                    <div class="title">
+                        <h3>Registrate</h3>
+                        <p></p>                        
+                            <label class="table"> 
+                                El siguiente formulario es para interactuar con funciones y eventos sobre el HTML. Al registrarse, se guardan los datos en el LocalStorage, se cargan alertas de la libreria Sweetalert2, y se ejecutan funciones que agregan componentes al HTML, como ordenes que actuan sobre componentes existentes.
+                            </label>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 contact-form">
+                            <div class="form tm-contact-item-inner">
+                                <form>
+                                    <div class="form-group"><input name="name" type="text"  placeholder="Name" id="nombreTxt"></div>
+                                    <div class="form-group"><input name="email" type="text"  placeholder="Email" id="emailTxt"></div>
+                                    <div class="form-group"><input name="password" type="password"  placeholder="Password" id="passwordTxt1"></div>     
+                                    <div class="form-group"><input name="password2" type="password"  placeholder="Repetir Password" id="passwordTxt2"></div>                                   
+                                    <div class="form-group">
+                                        <p></p>
+                                        <input type="button" class="btn btn-primary" value="Registrar" id="btnRegistrar">         
+                                        <input type="button" class="btn btn-primary" value="Limpiar" id="btnLimpiar">                                         
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 mb-4">
+                            <p>Los datos del formulario se deben ver reflejados aqui:</p>
+                            <div class="table" id="resultados"></div>                        
+                        </div>
+                        
+                    </div>                
+                </div>
+                
+            </section>
+
             <!-- Solicitar Prestamo -->
-            <section class="work-section section" id="section-1">
+            <section class="gwork-section section" data-parallax="scroll" data-image-src="img/Block2.jpg" id="section-1">
               
                 <div class="container">
                     <div class="row">
@@ -57,17 +94,17 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-3">
-                                    <div class="form-group">
+                                    <div class="form-group table">
                                         <label for="monto">Monto</label>
-                                        <input type="text" class="form-control" id="monto" placeholder="Monto" value="0">
+                                        <input type="text"  id="monto" placeholder="Monto" value="0">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group table">
                                         <label for="tiempo">Cuotas</label>
-                                        <input type="text" class="form-control" id="tiempo" placeholder="Cuotas" value="0">
+                                        <input type="text"  id="tiempo" placeholder="Cuotas" value="0">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group table">
                                         <label for="interes">Interés</label>
-                                        <input type="text" class="form-control" id="interes" placeholder="Tasa de Interes" value="1">
+                                        <input type="text"  id="interes" placeholder="Tasa de Interes" value="0">
                                     </div>
                                     <p></p>
                                     <button type="submit" class="btn btn-primary" id="btnCalcular">Calcular</button>
@@ -92,46 +129,12 @@
                        
                                               
                 </div>
-            </section>
-        
-            <!-- Cotizador de Monedas -->
-            <section class="gwork-section section" data-parallax="scroll" data-image-src="img/Block3.jpg" id="section-2">
-                <div class="container">                            
-                            <div class="title text-center">
-                                <h2>Consultar cotización de monedas</h2>
-                                <p></p>                        
-                            <label> 
-                                A continuación, puede ingresar un valor determinado, o puede incrementar de a una unidad el valor de la moneda.
-                            </label>   
-                            <p></p>          
-                            <div class="container">
-                                <div>
-                                    <select id="moneda-uno">                                    
-                                        <option value="ARS">ARS</option>
-                                        <option value="EUR">EUR</option>
-                                        <option value="USD" selected>USD</option>   
-                                    </select> <input type="number" class="form-control" id="cantidad-uno" placeholder="0" value="1">
-                            </div>
-                                <p></p>
-                                <div>                              
-                                     Cotización:   <div id="cambio" ></div>                    
-                                </div>
-                                <p></p>
-                            <div>
-                                <select id="moneda-dos">
-                                    <option value="ARS" selected>ARS</option>
-                                    <option value="EUR">EUR</option>
-                                    <option value="USD">USD</option>
-                                </select> <input type="textbox" id="cantidad-dos" class="form-control">                    
-                            </div>
-                        </div>
-                    </div>                       
-            </section>
+            </section>   
 
             <!-- Cotizador de Criptomonedas -->
-            <section class="gwork-section section" data-parallax="scroll" data-image-src="img/Block3.jpg" id="section-3">
+            <section class="gwork-section section" data-parallax="scroll" data-image-src="img/Block2.jpg" id="section-3">
                 <div class="container">
-                    <div class="title text-center">
+                    <div class="title text-center table">
                         <h2>Cotizador de Criptomonedas</h2>
                         <p></p>                        
                         <label> 
@@ -141,8 +144,8 @@
                         <p></p>
 
                        <h2></h2>
-                        <div class="image-side"></div>
-                        <div class="form-side">
+                        <div class="image-side table"></div>
+                        <div class="form-side table">
                             <form action="" id="form-search">
                                 <select id="moneda" name="moneda">
                                     <option value="">Elige tu moneda</option>
@@ -155,7 +158,7 @@
                                     <option value="" >Criptomoneda</option>
                                 </select>
                                 <p></p>
-                                <input class="btn btn-primary" class="" type="submit" value="Cotizar" />
+                                <input type="submit" value="Cotizar" />
                                 
                                 <p></p>
                                 <div class="container-answer"></div>
@@ -171,63 +174,40 @@
             
             </section>
 
-            <!-- Registrarse -->
-            <section class="contact-section section" id="section-4">
-                <div class="container">
-                    <div class="title">
-                        <h3>Registrate</h3>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-5 col-md-6 mb-4 contact-form">
-                            <div class="form tm-contact-item-inner">
-                                <form action="#" method="POST">
-                                    <div class="form-group">
-                                        <input name="name" type="text" class="form-control" placeholder="Name">
+            <!-- Cotizador de Monedas -->
+            <section class="gwork-section section" data-parallax="scroll" data-image-src="img/Block2.jpg" id="section-2">
+                            <div class="container">                            
+                                        <div class="title text-center">
+                                            <h2>Consultar cotización de monedas</h2>
+                                            <p></p>                        
+                                        <label> 
+                                            A continuación, puede ingresar un valor determinado, o puede incrementar de a una unidad el valor de la moneda.
+                                        </label>   
+                                        <p></p>          
+                                        <div class="container">
+                                            <div>
+                                                <select id="moneda-uno">                                    
+                                                    <option value="ARS">ARS</option>
+                                                    <option value="EUR">EUR</option>
+                                                    <option value="USD" selected>USD</option>   
+                                                </select> <input type="number" id="cantidad-uno" placeholder="0" value="1">
+                                        </div>
+                                            <p></p>
+                                            <div>                              
+                                                 Cotización:   <div id="cambio" ></div>                    
+                                            </div>
+                                            <p></p>
+                                        <div>
+                                            <select id="moneda-dos">
+                                                <option value="ARS" selected>ARS</option>
+                                                <option value="EUR">EUR</option>
+                                                <option value="USD">USD</option>
+                                            </select> <input type="textbox" id="cantidad-dos">                    
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <input name="email" type="text" class="form-control" placeholder="Email">
-                                    </div>
-                                    <div class="form-group">
-                                        <input name="password" type="password" class="form-control" placeholder="Password">
-                                    </div>     
-                                    <div class="form-group">
-                                        <input name="password2" type="password" class="form-control" placeholder="Repetir Password">
-                                    </div>                                   
-                                    <div class="form-group text-right">
-                                        <input type="submit" class="btn btn-primary" value="Registrar">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mb-4 contact-details">
-                            <div class="tm-contact-item-inner-2">
-                                <p>No olvides revisar tu correo y confirmar tu casilla de correo</p>
-                                <ul class="font-weight-light">
-                                    <li>
-                                        <span class="icn"><i class="fas fa-mobile-alt"></i></span>
-                                        <span class="lbl">Tel:</span> <a href="#">010-020-0340</a>
-                                    </li>
-                                    <li>
-                                        <span class="icn"><i class="fas fa-at"></i></span>
-                                        <span class="lbl">Email:</span> <a href="#">fastt@exchange.com</a>
-                                    </li>
-                                    <li>
-                                        <span class="icn"><i class="fas fa-globe-asia"></i></span>
-                                        <span class="lbl">URL:</span> <a href="#">www.fasttexchange.com</a>
-                                    </li>
-                                </ul>
-                            </div>                        
-                        </div>
-                        
-                    </div>                
-                </div>
-                <footer class="footer container container-2">
-                    <div class="row"> 
-                        <p class="col-sm-7">Martin Ossés - JavaScript - Coderhouse</p>
-                        <p class="col-sm-5 text-right design">Linkedin: <a rel="nofollow" href="https://www.linkedin.com/in/martin-osses/" target="_parent">Martín Ossés</a></p>
-                    </div>
-                </footer>
+                                </div>                       
             </section>
+           
         </main>
     </div>
 
@@ -241,6 +221,8 @@
     <script src="js_funcionalidades/prestamo.js"></script>    
     <script src="js_funcionalidades/cotizarMoneda.js"></script>
     <script src="js_funcionalidades/cotizarCriptos.js"></script>
+    <script src="js_funcionalidades/registrar.js"></script>
+
 
 
 </body>

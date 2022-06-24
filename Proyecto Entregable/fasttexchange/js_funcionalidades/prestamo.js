@@ -5,18 +5,14 @@ let interes = document.getElementById('interes');
 const btnCalcular = document.getElementById('btnCalcular');
 const llenarTabla = document.querySelector('#lista-tabla tbody');
 
-btnCalcular.addEventListener('click', () => {
-    calcularCuota(monto.value, interes.value, tiempo.value);    
-})
 
-function calcularCuota(monto, interes, tiempo){        
-   
-    if(tiempo <= 8 && monto > 0){       
-               
+
+
+function calcularCuota(monto, interes, tiempo){   
+    if(tiempo <= 8 && monto > 0){                      
         while(llenarTabla.firstChild){
             llenarTabla.removeChild(llenarTabla.firstChild);
         }
-
         let fechas = [];
         let fechaActual = Date.now();
         let mes_actual = moment(fechaActual);
@@ -26,7 +22,6 @@ function calcularCuota(monto, interes, tiempo){
         cuota = monto * (Math.pow(1+interes/100, tiempo)*interes/100)/(Math.pow(1+interes/100, tiempo)-1);
 
         for(let i = 1; i <= tiempo; i++) {
-
             pagoInteres = parseFloat(monto*(interes/100));
             pagoCapital = cuota - pagoInteres;
             monto = parseFloat(monto-pagoCapital);
@@ -49,8 +44,25 @@ function calcularCuota(monto, interes, tiempo){
     {
             Swal.fire({ icon: 'info', title: 'Oops!', text: 'No otorgamos préstamos mayores a 8 meses, ni prestamos en $0', })
     }
-
 }
 
+monto.addEventListener('click', () => {   
+    monto.value = '';
+ });
 
+ tiempo.addEventListener('click', () => {   
+    tiempo.value = '';
+ });
+
+ btnCalcular.addEventListener('click', () => {       
+    if(interes.value <= 0 || interes.value == null)
+    {   
+        interes.value = 1; 
+        Swal.fire({ icon: 'info', title: 'Oops!', text: 'El interes debe ser mayor a 0', })
+    }
+ });
+ 
+btnCalcular.addEventListener('click', () => {
+    calcularCuota(monto.value, interes.value, tiempo.value);    
+})
 

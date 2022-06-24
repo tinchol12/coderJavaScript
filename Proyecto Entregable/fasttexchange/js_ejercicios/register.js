@@ -1,5 +1,3 @@
-
-
 const btnLimpiarLabels = document.getElementById('limpiarLabels');
 const btnEnviar = document.getElementById('enviarBtn');
 const nombreUsuario = document.getElementById('name');   
@@ -49,14 +47,12 @@ let limpiarFormulario = () => {
 let validarPass = () => {
    
     if(contrasena.value == confirmarContrasena.value)
-    {
-         
+    {         
         Swal.fire({
             icon: 'success',
             title: 'OK!',
             text: 'Las contraseñas coinciden',
-        })
-        
+        })        
         console.log('Las contraseñas coinciden');
         flagValidPass = true;
     }
