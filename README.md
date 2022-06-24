@@ -86,14 +86,12 @@ Desafio 8 - Manejo del DOM 07/06/2022
 
 
  Entrega final:
-  - 1er Modulo: Se entrega un módulo en donde se puede simular un prestamo.
-    - Se limita a 8 cuotas para jugar con las alertas
-  - 2do Modulo: Cotizador de monedas
-    - Basicamente es para comparar el valor entre monedas. Esta conectado a una open api, usando Fetch.
-  - 3er Modulo: Cotizador de Criptos
-    - Similar al cotizador de monedas, diferente forma de manipular, y con validaciones mientras hace las consultas a la API. 
-  - 4to Modulo: Registrarse
-    - Se interactua con el formulario, funciones que generan cambios sobre elementos del HTML o nuevos elementos.
+  - Modulo: Registrarse
+  - Modulo: Se entrega un módulo en donde se puede simular un prestamo
+  - Modulo: Cotizador de Criptos
+  - Modulo: Cotizador de monedas
+ 
+  
   
  
  

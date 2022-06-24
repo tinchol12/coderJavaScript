@@ -96,9 +96,9 @@ btnRegistrarse.addEventListener('click', () => {
 
     if(flagValidPass == true) {
 
-        mostrarValoresEnAlert();
         guardarValoresLocalStrorage();
         pasarResultados();
+        mostrarValoresEnAlert();
         letLimpiarFormulario();
     }    
     
