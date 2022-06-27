@@ -95,6 +95,8 @@ Desafio 8 - Manejo del DOM 07/06/2022
     - Funciones, Eventos sobre el HTML, Crear componentes del HTML, Iteraciones (for, while), Eventos
   - Modulo: Cotizador de Criptos
     - Uso Fetch para consumir datos de una API, foreach para presentar los resultados una y otra vez.
+    
+    ![image](https://user-images.githubusercontent.com/50757354/175971682-b2f14435-d5ff-4629-8ad2-89014de7fd4c.png)
 
   - Pruebas automatizadas:
     - Como instalar Cypress
@@ -109,13 +111,17 @@ Desafio 8 - Manejo del DOM 07/06/2022
 
       1. Pruebas en vivo:
 
+      ![vivo](https://user-images.githubusercontent.com/50757354/175971276-159e9875-3b22-4e93-a71f-b764ea8ef6c3.png)
+
       2. Pruebas por consola:
       Al finalizar la ejecución se puede ver un reporte por consola.
-      
-      
+
+      ![consola](https://user-images.githubusercontent.com/50757354/175971329-14c8c889-4bc2-47cd-84ad-0c91851ba2a2.png)
+
       Y también se genera un HTML (usando la libreria de mochawesome) que lo hace mas amigable, y es facil de presentar a un equipo.
 
-      
+      ![reporte](https://user-images.githubusercontent.com/50757354/175971387-96afe61e-c6b6-4d40-b4a3-ea6effb005cf.png)
+
 
 
       
