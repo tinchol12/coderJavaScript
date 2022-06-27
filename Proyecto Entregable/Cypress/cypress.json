@@ -1,0 +1,20 @@
+{
+    "videoUploadOnPasses":false,
+    "screenshotOnRunFailure:": true,
+    "video":false,
+    "defaultCommandTimeout": 25000,
+    "chromeWebSecurity": false,    
+     "reporter": "mochawesome",
+     "reporterOptions": {
+            "reportFilename": "reporte",
+            "reportDir": "cypress/report/",
+            "overwrite": false,
+            "html": true,
+            "json": false,
+            "charts": true
+      },
+      "viewreport":{ 
+                        "viewportWidth": 1000,
+                        "viewportHeight": 660
+                   }
+}

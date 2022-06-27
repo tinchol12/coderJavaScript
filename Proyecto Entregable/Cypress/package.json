@@ -1,0 +1,23 @@
+{
+  "name": "javaScript-cy",
+  "version": "1.0.0",
+  "description": "Automation with Cypress",
+  "main": "main.html",
+  "scripts": {
+    "local": "npx cypress open",
+    "validations": "npx cypress run --spec cypress/integration/testCases/pharmacySuite/pharmacy.suite-spects.js",
+    "coreprocess": "npx cypress run --spec cypress/integration/testCases/pharmacy/create.order-spect.js",
+    "report": "npx cypress run --spec cypress/integration/test-spect.js"
+  },
+  "author": "Martin Osses",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.0.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-xpath": "^1.6.2",
+    "mocha": "^9.0.3",
+    "mochawesome": "^6.3.1",
+    "mochawesome-merge": "^4.2.0",
+    "package.json": "^2.0.1"
+  }
+}

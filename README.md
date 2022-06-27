@@ -97,7 +97,13 @@ Desafio 8 - Manejo del DOM 07/06/2022
     - Uso Fetch para consumir datos de una API, foreach para presentar los resultados una y otra vez.
   - Pruebas automatizadas:
     - Como instalar Cypress
+      - Instalar nodejs --> desde https://nodejs.org/es/ descargar la version recomendada para la mayoría
+      - Ejecutar el package.json para que se instale cypress 9.7.0 
     - Como ejecutar las pruebas
+      - Correr el main.html con Live Server desde visual studio. tomar nota del puerto a donde se corre el liveserver
+      - En la carpeta de Cypress --> support --> commands.js verificar que en la URL esté el mismo puerto que corre liveserver.
+      - Ejecutar npx cypress open
+      
  
   
   

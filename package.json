@@ -1,0 +1,19 @@
+{
+  "name": "coderjavascript",
+  "version": "1.0.0",
+  "description": "Pruebas automatizadas sobre el proyecto de JavaScript de Coderhouse",
+  "main": "main.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinchol12/coderJavaScript.git"
+  },
+  "author": "Martin Osses",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tinchol12/coderJavaScript/issues"
+  },
+  "homepage": "https://github.com/tinchol12/coderJavaScript#readme"
+}
