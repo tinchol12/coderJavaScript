@@ -31,6 +31,17 @@ describe('Pruebas sobre el simulador de Préstamos', () => {
         cy.get('[id="tiempo"').type('ABCDS');
         cy.get('[id="tiempo"').should('have.text', '');
     });  
+
+    it.only('No puede ingresar un valor mayor a 8 en cuotas', () => {
+        cy.get('[id="tiempo"').type('9');
+        cy.get('[id="btnCalcular"]').click();
+        cy.get('[id="swal2-html-container"]').should('have.text', 'No otorgamos préstamos mayores a 8 meses, ni prestamos en $0');
+        cy.get('[class="swal2-confirm swal2-styled"]').click();
+        cy.get('[id="tiempo"').type('8');
+        cy.get('[id="btnCalcular"]').click();
+        cy.get('#lista-tabla > thead > tr').should('be.visible');
+
+    });  
     
     it('Al quedar vacio el campo Interes se debe completar con 1', () => {
         cy.get('[id="monto"').type('15000');
