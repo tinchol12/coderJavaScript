@@ -25,7 +25,6 @@
                         <li cy-data="1" class="nav-item"><a class="nav-link" href="#section-4"><span class="icn"><i class="far fa-2x fa-comments"></i></span> Registrate</a></li>                      
                         <li cy-data="2"class="nav-item"><a class="nav-link" href="#section-1"><span class="icn"><i class="fas fa-2x fa-air-freshener"></i></span> Prestamo </a></li>
                         <li cy-data="3"class="nav-item"><a class="nav-link" href="#section-3"><span class="icn"><i class="far fa-2x fa-images"></i></span> Criptos</a></li>
-                        <li cy-data="4"class="nav-item"><a class="nav-link" href="#section-2"><span class="icn"><i class="fab fa-2x fa-battle-net"></i></span> Cambio</a></li>
                     </ul>
                 </div>
             </nav>
@@ -41,7 +40,14 @@
 
         <main id="content-box" class="order-first"> 
 
-            
+             <!-- Presentación -->
+             <section class="gwork-section" data-image-src="img/Block2.jpg">               
+                <div class="container">
+                    <div class="title">
+                        <h5 cy-data="48">Presentación: { Alumno: <a rel="nofollow" href="https://www.linkedin.com/in/martin-osses/" target="_parent">Martín Ossés </a> } - { Curso: JavaScript } - { Comisión: 30350 } </h3>
+                    </div>  
+                </div>
+            </section>            
 
             <!-- Registrarse -->
             <section class="gwork-section section" data-parallax="scroll" data-image-src="img/Block2.jpg" id="section-4">               
@@ -172,41 +178,7 @@
                 </div>
             
             
-            </section>
-
-            <!-- Cotizador de Monedas -->
-            <section class="gwork-section section" data-parallax="scroll" data-image-src="img/Block2.jpg" id="section-2">
-                            <div class="container">                            
-                                        <div class="title text-center">
-                                            <h2>Consultar cotización de monedas</h2>
-                                            <p></p>                        
-                                        <label> 
-                                            A continuación, puede ingresar un valor determinado, o puede incrementar de a una unidad el valor de la moneda.
-                                        </label>   
-                                        <p></p>          
-                                        <div class="container">
-                                            <div>
-                                                <select id="moneda-uno">                                    
-                                                    <option value="ARS">ARS</option>
-                                                    <option value="EUR">EUR</option>
-                                                    <option value="USD" selected>USD</option>   
-                                                </select> <input type="number" id="cantidad-uno" placeholder="0" value="1">
-                                        </div>
-                                            <p></p>
-                                            <div>                              
-                                                 Cotización:   <div id="cambio" ></div>                    
-                                            </div>
-                                            <p></p>
-                                        <div>
-                                            <select id="moneda-dos">
-                                                <option value="ARS" selected>ARS</option>
-                                                <option value="EUR">EUR</option>
-                                                <option value="USD">USD</option>
-                                            </select> <input type="textbox" id="cantidad-dos">                    
-                                        </div>
-                                    </div>
-                                </div>                       
-            </section>
+            </section>          
            
         </main>
     </div>
@@ -219,7 +191,6 @@
     <script src="js/moment.js"></script>
     <script src="js/templatemo-script.js"></script>
     <script src="js_funcionalidades/prestamo.js"></script>    
-    <script src="js_funcionalidades/cotizarMoneda.js"></script>
     <script src="js_funcionalidades/cotizarCriptos.js"></script>
     <script src="js_funcionalidades/registrar.js"></script>
 
