@@ -86,10 +86,18 @@ Desafio 8 - Manejo del DOM 07/06/2022
 
 
  Entrega final:
+  Para la entrega final usé todo lo que vimos en clases que fui aplicando en los entregables y ademas cosas útiles que salieron de videos
+  recomendados. 
+  Mi proposito de hacer el curso era aprender mas sobre JavaScript y poder aplicarlo en pruebas automatizadas, por lo tanto integre Nodejs y Cypress.io para poder hacer unas pruebas a modo de ejemplo.
   - Modulo: Registrarse
+    - Funciones, validaciones, librerias
   - Modulo: Se entrega un módulo en donde se puede simular un prestamo
+    - Funciones, Eventos sobre el HTML, Crear componentes del HTML, Iteraciones (for, while), Eventos
   - Modulo: Cotizador de Criptos
-  - Modulo: Cotizador de monedas
+    - Uso Fetch para consumir datos de una API, foreach para presentar los resultados una y otra vez.
+  - Pruebas automatizadas:
+    - Como instalar Cypress
+    - Como ejecutar las pruebas
  
   
   
