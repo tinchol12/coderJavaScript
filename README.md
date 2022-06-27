@@ -104,6 +104,7 @@ Desafio 8 - Manejo del DOM 07/06/2022
       - En la carpeta de Cypress --> support --> commands.js verificar que en la URL esté el mismo puerto que corre liveserver.
       - Ejecutar npx cypress open
       
+      
  
   
   
