@@ -1,7 +1,6 @@
 const form = document.querySelector("#form-search");
 const moneda = document.querySelector("#moneda");
 const criptomoneda = document.querySelector("#criptomonedas");
-const formContainer = document.querySelector(".form-side");
 const containerAnswer = document.querySelector(".container-answer");
 
 const objBusqueda = {
