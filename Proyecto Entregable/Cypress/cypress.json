@@ -2,13 +2,13 @@
     "videoUploadOnPasses":false,
     "screenshotOnRunFailure:": true,
     "video":false,
-    "defaultCommandTimeout": 25000,
+    "defaultCommandTimeout": 5000,
     "chromeWebSecurity": false,    
      "reporter": "mochawesome",
      "reporterOptions": {
             "reportFilename": "reporte",
             "reportDir": "cypress/report/",
-            "overwrite": false,
+            "overwrite": true,
             "html": true,
             "json": false,
             "charts": true

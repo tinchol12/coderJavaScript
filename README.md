@@ -95,6 +95,7 @@ Desafio 8 - Manejo del DOM 07/06/2022
     - Funciones, Eventos sobre el HTML, Crear componentes del HTML, Iteraciones (for, while), Eventos
   - Modulo: Cotizador de Criptos
     - Uso Fetch para consumir datos de una API, foreach para presentar los resultados una y otra vez.
+
   - Pruebas automatizadas:
     - Como instalar Cypress
       - Instalar nodejs --> desde https://nodejs.org/es/ descargar la version recomendada para la mayoría
@@ -104,6 +105,19 @@ Desafio 8 - Manejo del DOM 07/06/2022
       - En la carpeta de Cypress --> support --> commands.js verificar que en la URL esté el mismo puerto que corre liveserver.
       - Ejecutar npx cypress open
       
+      Hay dos formas de ejecutar las pruebas de cypress y ver sus resultados. Ejecutando cypress y ver las ejecuciones en vivo, o ejecutar por consola y generar un reporte con sus resultados:
+
+      1. Pruebas en vivo:
+
+      2. Pruebas por consola:
+      Al finalizar la ejecución se puede ver un reporte por consola.
+      
+      
+      Y también se genera un HTML (usando la libreria de mochawesome) que lo hace mas amigable, y es facil de presentar a un equipo.
+
+      
+
+
       
  
   
