@@ -1,5 +1,5 @@
 
-describe('Pruebas sobre el formulario de Prestamos', () => {
+describe('Pruebas sobre el formulario de Registrarse', () => {
 
     beforeEach(() => {
         cy.Site();
@@ -8,6 +8,13 @@ describe('Pruebas sobre el formulario de Prestamos', () => {
     it('Validar que el título diga Registrate', () => {
         cy.get('[cy-data="5"]').should('have.text', 'Registrate');
     });  
+
+    it('Desde la barra de navegación ir a la seccion Registrarse', () => {
+        cy.get('[href="#section-3"]').click();
+        cy.wait(3000);
+        cy.get('[href="#section-4"]').click();
+        cy.get('[cy-data="5"]').should('have.text', 'Registrate');
+    })
 
     it('Validar que la descripción no tenga mas de 300 caracteres', () => {
 
