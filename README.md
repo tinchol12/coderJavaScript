@@ -1,4 +1,54 @@
-# Entregas
+       #####################################################################################################################################
+
+ Entrega final:
+  Para la entrega final usé todo lo que vimos en clases que fui aplicando en los entregables y ademas cosas útiles que salieron de videos
+  recomendados. Mi proposito al hacer el curso era aprender mas sobre JavaScript y poder aplicarlo en pruebas automatizadas, por lo tanto integre Nodejs y Cypress.io para poder hacer unas pruebas a modo de ejemplo. Incluyo un reporte que se genera integrando la libreria de Mochawasome junto a cypress.
+  
+  Es una aplicación muy simple, en donde se puede:
+   - Simular un registro de usuario (completar un formulario)
+   - Simular un préstamo
+   - Consultar cotizaciones de criptos
+   
+   Para revisar el proyecto, ejecutar el archivo main.html
+     
+  - Registrarse
+    - Funciones, validaciones, librerias
+  - Préstamo
+    - Funciones, Eventos sobre el HTML, Crear componentes del HTML, Iteraciones (for, while), Eventos
+  - Criptos
+    - Usando Fetch para consumir datos de una API, foreach para presentar diferentes cotizaciones.
+    
+    ![image](https://user-images.githubusercontent.com/50757354/175971682-b2f14435-d5ff-4629-8ad2-89014de7fd4c.png)
+
+  - Para poder ver y ejecutar las pruebas automatizadas:
+    - Instalar Cypress
+      - 1. Instalar nodejs --> desde https://nodejs.org/es/ descargar la version recomendada para la mayoría
+      - 2. Una vez que este abierto el proyecto, ejecutar el package.json para que se instale cypress 9.7.0 
+    - Como ejecutar las pruebas
+      - Correr el main.html con Live Server desde visual studio. tomar nota del puerto a donde se corre el liveserver. En mi caso, el 5001.
+      - En la carpeta de Cypress --> support --> commands.js verificar que en la URL esté el mismo puerto que corre liveserver.
+      - Ejecutar npx cypress open
+      
+      Hay dos formas de ejecutar las pruebas de cypress y ver sus resultados. Ejecutando cypress y ver las ejecuciones en vivo, o ejecutar por consola y generar un reporte con sus resultados:
+
+      1. Pruebas en vivo (npx cypress open):
+
+      ![vivo](https://user-images.githubusercontent.com/50757354/175971276-159e9875-3b22-4e93-a71f-b764ea8ef6c3.png)
+
+      2. Pruebas por consola (npm run reporte):
+      Al finalizar la ejecución se puede ver un reporte por consola.
+
+      ![consola](https://user-images.githubusercontent.com/50757354/175971329-14c8c889-4bc2-47cd-84ad-0c91851ba2a2.png)
+
+      Y también se genera un HTML (usando la libreria de mochawesome) que lo hace mas amigable, y es facil de presentar a un equipo.
+
+      ![reporte](https://user-images.githubusercontent.com/50757354/175971387-96afe61e-c6b6-4d40-b4a3-ea6effb005cf.png)
+      
+      
+      #####################################################################################################################################
+
+
+
 
 Desafio Complementario 01: 18/05/2022 
  - Dentro del index.html, cambiar el href a "uno.js", "dos.js", o "tres.js" para ejecutar cada uno de los ejercicios.
@@ -85,42 +135,7 @@ Desafio 8 - Manejo del DOM 07/06/2022
  - 1. Se integra la libreria Sweetalert2 reemplazando los promt y los alerts
 
 
- Entrega final:
-  Para la entrega final usé todo lo que vimos en clases que fui aplicando en los entregables y ademas cosas útiles que salieron de videos
-  recomendados. 
-  Mi proposito de hacer el curso era aprender mas sobre JavaScript y poder aplicarlo en pruebas automatizadas, por lo tanto integre Nodejs y Cypress.io para poder hacer unas pruebas a modo de ejemplo.
-  - Modulo: Registrarse
-    - Funciones, validaciones, librerias
-  - Modulo: Se entrega un módulo en donde se puede simular un prestamo
-    - Funciones, Eventos sobre el HTML, Crear componentes del HTML, Iteraciones (for, while), Eventos
-  - Modulo: Cotizador de Criptos
-    - Uso Fetch para consumir datos de una API, foreach para presentar los resultados una y otra vez.
-    
-    ![image](https://user-images.githubusercontent.com/50757354/175971682-b2f14435-d5ff-4629-8ad2-89014de7fd4c.png)
 
-  - Pruebas automatizadas:
-    - Como instalar Cypress
-      - Instalar nodejs --> desde https://nodejs.org/es/ descargar la version recomendada para la mayoría
-      - Ejecutar el package.json para que se instale cypress 9.7.0 
-    - Como ejecutar las pruebas
-      - Correr el main.html con Live Server desde visual studio. tomar nota del puerto a donde se corre el liveserver
-      - En la carpeta de Cypress --> support --> commands.js verificar que en la URL esté el mismo puerto que corre liveserver.
-      - Ejecutar npx cypress open
-      
-      Hay dos formas de ejecutar las pruebas de cypress y ver sus resultados. Ejecutando cypress y ver las ejecuciones en vivo, o ejecutar por consola y generar un reporte con sus resultados:
-
-      1. Pruebas en vivo:
-
-      ![vivo](https://user-images.githubusercontent.com/50757354/175971276-159e9875-3b22-4e93-a71f-b764ea8ef6c3.png)
-
-      2. Pruebas por consola:
-      Al finalizar la ejecución se puede ver un reporte por consola.
-
-      ![consola](https://user-images.githubusercontent.com/50757354/175971329-14c8c889-4bc2-47cd-84ad-0c91851ba2a2.png)
-
-      Y también se genera un HTML (usando la libreria de mochawesome) que lo hace mas amigable, y es facil de presentar a un equipo.
-
-      ![reporte](https://user-images.githubusercontent.com/50757354/175971387-96afe61e-c6b6-4d40-b4a3-ea6effb005cf.png)
 
 
 
