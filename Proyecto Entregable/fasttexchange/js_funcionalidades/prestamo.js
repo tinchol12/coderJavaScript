@@ -5,9 +5,6 @@ let interes = document.getElementById('interes');
 const btnCalcular = document.getElementById('btnCalcular');
 const llenarTabla = document.querySelector('#lista-tabla tbody');
 
-
-
-
 function calcularCuota(monto, interes, tiempo){   
     if(tiempo <= 8 && monto > 0){                      
         while(llenarTabla.firstChild){
