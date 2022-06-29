@@ -52,14 +52,6 @@ function mostrarCotizacion(data){
     containerAnswer.appendChild(answer);
 }
 
-function showError(mensage){
-    const error = document.createElement('p');
-    error.classList.add("error");
-    error.textContent = mensage;
-    formContainer.appendChild(error);
-    setTimeout(() => error.remove(), 3000);
-}
-
 function getValue(e){
     objBusqueda[e.target.name] = e.target.value; 
 }
