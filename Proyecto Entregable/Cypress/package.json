@@ -5,7 +5,9 @@
   "main": "main.html",
   "scripts": {
     "local": "npx cypress open",
-    "report": "npx cypress run --spec cypress/integration/*.js"
+    "report": "npx cypress run --spec cypress/integration/*.js",
+    "regresion": "npx cypress run --spec cypress/integration/regresion-spect.js"
+
   },
   "author": "Martin Osses",
   "license": "ISC",
