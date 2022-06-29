@@ -24,6 +24,7 @@
     - Instalar Cypress
       - 1. Instalar nodejs --> desde https://nodejs.org/es/ descargar la version recomendada para la mayoría
       - 2. Una vez que este abierto el proyecto, ejecutar el package.json para que se instale cypress 9.7.0 
+      - 3. ejecutar: npx cypress install para instalar cypress
     - Como ejecutar las pruebas
       - Correr el main.html con Live Server desde visual studio. tomar nota del puerto a donde se corre el liveserver. En mi caso, el 5001.
       - En la carpeta de Cypress --> support --> commands.js verificar que en la URL esté el mismo puerto que corre liveserver.
@@ -48,7 +49,7 @@
       ####################################################################################################
 
 
-
+Historial de entregas
 
 Desafio Complementario 01: 18/05/2022 
  - Dentro del index.html, cambiar el href a "uno.js", "dos.js", o "tres.js" para ejecutar cada uno de los ejercicios.

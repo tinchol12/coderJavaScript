@@ -6,9 +6,15 @@ const btnRegistrarse = document.getElementById('btnRegistrar');
 const btnLimpiar = document.getElementById('btnLimpiar');
 
 let flagValidPass = false;
+let nombreFlag = false;
+let emailFlag = false;
+let passwordFlag = false;
+let password2Flag = false;
 
 
-let guardarValoresLocalStrorage = () => {
+//Funciones
+
+const guardarValoresLocalStrorage = () => {
     let usuario = {
         nombre: nombre.value,        
         correo: email.value,
@@ -24,7 +30,7 @@ let guardarValoresLocalStrorage = () => {
     console.log("El objeto datoUsuario convertido a Json : " + datosUsuarioJSON);
 }
 
-let pasarResultados = () => {
+const pasarResultados = () => {
     
 
    let nuevoLabelName = "Nombre Registrado: " + nombre.value;
@@ -35,7 +41,7 @@ let pasarResultados = () => {
    document.getElementById('resultados'). innerHTML =   '      <p>' + nuevoLabelName  + '<p>' +  nuevoLabelEmail + '<p>' + nuevoLabelPassword + '<p>' + nuevoLabelPassword2 + '<p>' ;   
 }
 
-let mostrarValoresEnAlert = () => {
+const mostrarValoresEnAlert = () => {
     let datosUsuario = JSON.parse(localStorage.getItem('usuario'));
     
     Swal.fire({
@@ -45,7 +51,7 @@ let mostrarValoresEnAlert = () => {
       })    
 }
 
-let limpiarLabels = () => {
+const limpiarLabels = () => {
     document.getElementById('resultados').innerHTML = '';
     console.log('Se borro los resultados');   
 
@@ -58,7 +64,7 @@ let limpiarLabels = () => {
       })
 }
 
-letLimpiarFormulario = () => {
+const limpiarFormulario = () => {
 
     nombre.value = '';
     email.value = '';
@@ -67,7 +73,7 @@ letLimpiarFormulario = () => {
     console.log('al registrar un usuario, se limpia el formulario');
 }
 
-let validarPasswordsIguales = () => {
+const validarPasswordsIguales = () => {
    
     if(password.value == repetirPassword.value){         
         Swal.fire({
@@ -91,16 +97,62 @@ let validarPasswordsIguales = () => {
 
 }
 
+
+//Eventos
+
+nombre.addEventListener('textInput', () => {
+    console.log('Se ha ingresado un texto en el campo nombre');
+    nombreFlag = true;
+});
+
+email.addEventListener('textInput', () => {
+    console.log('Se ha ingresado un texto en el campo email');
+    emailFlag = true;
+});
+
+password.addEventListener('textInput', () => {
+    console.log('Se ha ingresado un texto en el campo password');
+    passwordFlag = true;
+});
+
+repetirPassword.addEventListener('textInput', () => {
+    console.log('Se ha ingresado un texto en el campo password2');
+    password2Flag = true;
+});
+
+
+
 btnRegistrarse.addEventListener('click', () => {    
-    validarPasswordsIguales();
+    
+    
+    if(nombreFlag == false || emailFlag == false || passwordFlag == false || password2Flag == false){
+        Swal.fire({
+            icon: 'error',
+            title: 'FAIL!',
+            text: 'Debe llenar todos los campos',
+        })
+        console.log('Debe llenar todos los campos');
+    }
+    else
+    {
+        Swal.fire({
+            icon: 'success',
+            title: 'OK!',
+            text: 'Todos los campos estan llenos',
+        })
+        validarPasswordsIguales();
 
     if(flagValidPass == true) {
 
         guardarValoresLocalStrorage();
         pasarResultados();
         mostrarValoresEnAlert();
-        letLimpiarFormulario();
+        limpiarFormulario();
     }    
+        console.log('Todos los campos estan llenos');
+    }
+
+    
     
 });
 
@@ -122,3 +174,5 @@ btnLimpiar.addEventListener('click', () => {
         }
       })
  });
+
+ 
