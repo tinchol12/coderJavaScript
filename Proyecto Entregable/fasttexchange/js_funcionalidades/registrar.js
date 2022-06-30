@@ -21,10 +21,12 @@ const guardarValoresLocalStrorage = () => {
         contrasena: password.value,
         confirmarContrasena: repetirPassword.value
     }
+
+    let mensaje = "Bienvenido de nuevo, " + usuario.correo + "!";
     
     localStorage.setItem('usuario', JSON.stringify(usuario));
     let datosUsuario = JSON.parse(localStorage.getItem('usuario'));
-    console.log(datosUsuario);
+    console.log(mensaje + ' ' + datosUsuario);
 
     const datosUsuarioJSON = JSON.stringify(datosUsuario);
     console.log("El objeto datoUsuario convertido a Json : " + datosUsuarioJSON);
@@ -100,22 +102,22 @@ const validarPasswordsIguales = () => {
 
 //Eventos
 
-nombre.addEventListener('textInput', () => {
+nombre.addEventListener('input', () => {
     console.log('Se ha ingresado un texto en el campo nombre');
     nombreFlag = true;
 });
 
-email.addEventListener('textInput', () => {
+email.addEventListener('input', () => {
     console.log('Se ha ingresado un texto en el campo email');
     emailFlag = true;
 });
 
-password.addEventListener('textInput', () => {
+password.addEventListener('input', () => {
     console.log('Se ha ingresado un texto en el campo password');
     passwordFlag = true;
 });
 
-repetirPassword.addEventListener('textInput', () => {
+repetirPassword.addEventListener('input', () => {
     console.log('Se ha ingresado un texto en el campo password2');
     password2Flag = true;
 });
